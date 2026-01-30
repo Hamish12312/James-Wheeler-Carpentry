@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rethink+Sans&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <title>James Wheeler Carpentry</title>
+    <style>
+        body, html {
+            margin: 0;
+            overflow: hidden;
+        }
+        header {
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        
+        .item1 {
+            grid-area: myArea;
+        }
+    
+        .item2 {
+            align-items: center;
+            justify-content: center;
+            margin: auto;
+            width: 90%;
+        }
+
+        .grid-container {
+            display: grid;
+            grid-template-areas: 'myArea';
+            gap: 0px;
+            padding: 0%;
+            position: absolute;
+        }
+
+        .grid-container > div {
+            text-align: center;
+            padding: 0;
+            align-items: center;
+        }
+
+        .socials {
+            background-color: hsla(0, 0%, 0%, 0.65);
+            padding: 0.7%;
+            border-radius: 15px;
+            max-width: 50px;
+            min-width: 10px;
+            margin-left: 1%;
+            margin-right: 1%;
+        }
+
+        .text {
+            position: static;
+            padding: 1%;
+            border-radius: 15px;
+            text-align: center;
+            background-color: hsla(0, 0%, 0%, 0.65);
+            max-width: 800px;
+            margin-left: 1%;
+            margin-right: 1%;
+			font-family: 'Work Sans', sans-serif;
+            font-size: 19px;
+            color: white;
+			font-weight: 300;
+        }
+
+        .fade {
+            animation-name: fade;
+            animation-duration: 1.5s;
+            width: 100%;
+            height: 100%;
+        }
+
+        .imagesize {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+		
+		.logo {
+            padding: 0%;
+            margin: auto;
+            max-width: 300px;
+        }
+
+        .logosize {
+            width: 100%;
+        }
+/* Image changing background styles */
+        .slideshow-container {
+            position: absolute;
+            margin: auto;
+            height: 100%;
+            width: 100%;
+        }
+
+        .mySlides {
+            width: 100%;
+            height: 100%;
+        }
+		@keyframes fade {
+            from {opacity: .4} 
+            to {opacity: 1}
+        }
+/* End of image changing background styles */
+		
+        @media (max-height: 800px) {
+			.logosize {
+				max-width: 65%;
+			}
+			.text {
+				font-size: 15px;
+			}
+            
+        }`
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="slideshow-container">
+            <div class="mySlides fade">
+                <img class="imagesize" src="images/hp_1.JPG" alt="1">
+            </div>
+            <div class="mySlides fade">
+                <img class="imagesize" src="images/hp_2.JPG" alt="2">
+            </div>
+            <div class="mySlides fade">
+                <img class="imagesize" src="images/hp_4.JPG" alt="4">
+            </div>
+            <div class="mySlides fade">
+                <img class="imagesize" src="images/hp_5.JPG" alt="5">
+            </div>
+            <div class="mySlides fade">
+                <img class="imagesize" src="images/hp_6.JPG" alt="6">
+            </div>
+            <div class="mySlides fade">
+                <img class="imagesize" src="images/hp_7.JPG" alt="7">
+            </div>
+			<div class="mySlides fade">
+                <img class="imagesize" src="images/hp_8.JPG" alt="8">
+            </div>
+        </div>
+
+        <br>
+
+        <div class="grid-container">
+            <div class="item1">
+                <div class="logo">
+                    <p>
+                        <img src="images/logo.PNG" class="logosize" alt="Logo" />
+                    </p>
+                </div>
+            </div>
+            <div class="item2">
+                <div class="homeblurb">
+                    <div class="text">
+                        <p>Based in Newbury, Berkshire, and backed by 25 years of expertise, an extensive record of satisfied clients, and successfully executed projects, I take pride in providing top-tier carpentry and general building services, ensuring an impeccable level of craftsmanship.</p>
+						<p><a style="color: white;" href="tel:07796371000">07796 371000</a></p>
+						<p><a style="color: white;" href="mailto:enquiries@jameswheelercarpentry.co.uk">enquiries@jameswheelercarpentry.co.uk</a></p>
+                    </div>
+                </div>
+                <div>
+                    <p>
+                        <a href="tel:07796371000">
+                            <img src="https://img.icons8.com/ios/50/FFFFFF/phone--v1.png" class="socials" alt="phone">
+                        </a> 
+                        <a href="https://www.instagram.com/jameswheelercarpentry/">
+                            <img src="https://img.icons8.com/ios/50/FFFFFF/instagram-new--v1.png" class="socials" alt="instagram">                
+                        </a>
+                        <a href="https://wa.me/447796371000">
+                            <img src="https://img.icons8.com/ios/50/FFFFFF/whatsapp--v1.png" class="socials" alt="whatsapp">                
+                        </a>
+                    </p>
+                </div>
+            </div>  
+        </div>
+        <script>
+            let slideIndex = 0;
+            showSlides();
+
+            function showSlides() {
+                let i;
+                let slides = document.getElementsByClassName("mySlides");
+                for (i = 0; i < slides.length; i++) {
+                    slides[i].style.display = "none";  
+                }
+                slideIndex++;
+                if (slideIndex > slides.length) {slideIndex = 1}    
+                slides[slideIndex-1].style.display = "block";  
+                setTimeout(showSlides, 4000); // Change image every 4 seconds
+            }
+        </script>
+    </header>
+</body>
+</html>
